@@ -8,17 +8,19 @@ type ProfileHeaderProps = {
 
 export default function ProfileHeader({ name, bio, imageSrc }: ProfileHeaderProps) {
   return (
-    <header className="flex flex-col items-center gap-4 text-center">
-      <Image
-        className="size-40 rounded-full border-2 border-zinc-900 object-cover dark:border-zinc-100"
-        src={imageSrc}
-        alt={`${name} 프로필 사진`}
-        width={160}
-        height={160}
-        loading="eager"
-      />
-      <h1 className="text-2xl font-bold">{name}</h1>
-      <p className="whitespace-pre-line leading-7 text-zinc-600 dark:text-zinc-400">
+    <header className="flex flex-col items-center text-center motion-safe:animate-fade-up">
+      <div className="rounded-full bg-gradient-to-b from-white/90 to-white/40 p-1 shadow-[0_18px_40px_-12px_rgb(140_50_0/0.55),0_4px_10px_-4px_rgb(140_50_0/0.3)]">
+        <Image
+          className="size-32 rounded-full object-cover shadow-[inset_0_2px_6px_rgb(0_0_0/0.4)]"
+          src={imageSrc}
+          alt={`${name} 프로필 사진`}
+          width={128}
+          height={128}
+          loading="eager"
+        />
+      </div>
+      <h1 className="mt-6 text-[1.75rem] font-bold tracking-tight">{name}</h1>
+      <p className="mt-2 whitespace-pre-line text-[15px] font-medium leading-6 text-muted">
         {bio}
       </p>
     </header>
