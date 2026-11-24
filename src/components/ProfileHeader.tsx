@@ -9,7 +9,7 @@ type ProfileHeaderProps = {
 export default function ProfileHeader({ name, bio, imageSrc }: ProfileHeaderProps) {
   return (
     <header className="flex flex-col items-center text-center motion-safe:animate-fade-up">
-      <div className="rounded-full bg-gradient-to-b from-white/90 to-white/40 p-1 shadow-[0_18px_40px_-12px_rgb(140_50_0/0.55),0_4px_10px_-4px_rgb(140_50_0/0.3)]">
+      <div className="rounded-full bg-gradient-to-b from-white/90 to-white/40 p-1 shadow-(--avatar-shadow) dark:from-orange-300/50 dark:to-orange-600/15">
         <Image
           className="size-32 rounded-full object-cover shadow-[inset_0_2px_6px_rgb(0_0_0/0.4)]"
           src={imageSrc}

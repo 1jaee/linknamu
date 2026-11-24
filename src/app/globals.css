@@ -1,11 +1,35 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
   --foreground: #2b1406;
   --muted: rgb(43 20 6 / 0.7);
   --glass: rgb(255 255 255 / 0.28);
   --glass-hover: rgb(255 255 255 / 0.38);
   --glass-border: rgb(255 255 255 / 0.5);
+  --card-shadow: 0 8px 24px -12px rgb(140 50 0 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6);
+  --avatar-shadow: 0 18px 40px -12px rgb(140 50 0 / 0.55), 0 4px 10px -4px rgb(140 50 0 / 0.3);
+  --page-base: #ff7a1a;
+  --page-bg:
+    radial-gradient(120% 60% at 50% 0%, rgb(255 255 255 / 0.28), transparent 60%),
+    linear-gradient(165deg, #ff6b1a 0%, #ff8f2b 40%, #ffb238 70%, #ffd44f 100%);
+}
+
+.dark {
+  color-scheme: dark;
+  --foreground: #fff1e3;
+  --muted: rgb(255 241 227 / 0.68);
+  --glass: rgb(255 255 255 / 0.06);
+  --glass-hover: rgb(255 255 255 / 0.11);
+  --glass-border: rgb(255 170 100 / 0.22);
+  --card-shadow: 0 8px 24px -12px rgb(0 0 0 / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.08);
+  --avatar-shadow: 0 18px 40px -12px rgb(0 0 0 / 0.7), 0 4px 10px -4px rgb(0 0 0 / 0.5);
+  --page-base: #160a04;
+  --page-bg:
+    radial-gradient(120% 60% at 50% 0%, rgb(255 122 26 / 0.22), transparent 60%),
+    linear-gradient(165deg, #160a04 0%, #24110a 45%, #3a1a08 80%, #4a2409 100%);
 }
 
 @theme inline {
@@ -32,13 +56,17 @@
 }
 
 html {
-  background: #ff7a1a;
+  background: var(--page-base);
 }
 
 body {
   color: var(--foreground);
   font-family: var(--font-sans);
-  background:
-    radial-gradient(120% 60% at 50% 0%, rgb(255 255 255 / 0.28), transparent 60%),
-    linear-gradient(165deg, #ff6b1a 0%, #ff8f2b 40%, #ffb238 70%, #ffd44f 100%);
+  background: var(--page-bg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: color 0.3s ease;
+  }
 }
