@@ -8,7 +8,7 @@ type LinkCardProps = {
 export default function LinkCard({ title, url, count, onClick }: LinkCardProps) {
   return (
     <a
-      className="group grid h-16 w-full grid-cols-[4rem_1fr_4rem] items-center rounded-3xl border border-glass-border bg-glass px-6 text-base font-semibold shadow-[0_8px_24px_-12px_rgb(140_50_0/0.35),inset_0_1px_0_rgb(255_255_255/0.6)] backdrop-blur-xl transition-colors duration-300 hover:bg-glass-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:bg-glass-hover motion-reduce:transition-none"
+      className="group grid h-16 w-full grid-cols-[4rem_1fr_4rem] items-center rounded-3xl border border-glass-border bg-glass px-6 text-base font-semibold shadow-(--card-shadow) backdrop-blur-xl transition-colors duration-300 hover:bg-glass-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:bg-glass-hover motion-reduce:transition-none"
       href={url}
       target="_blank"
       rel="noopener noreferrer"
